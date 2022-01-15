@@ -17,9 +17,11 @@ export interface Config {
   };
   isValidPassword: {
     regexPersonalized: string;
-    upperCase: boolean;
-    specialSymbol: boolean;
-    number: boolean;
+    minChar: number;
+    desativeUpperCase: boolean;
+    desativeSpecialSymbol: boolean;
+    desativeNumber: boolean;
+    desativeLetter: boolean;
   };
   isValidPhone: {
     regexPersonalized: string;

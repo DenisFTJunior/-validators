@@ -1,12 +1,20 @@
 import { MatchObject, MatchSchema } from "../../schema/Match";
 
-const StopMatch = (status: boolean): MatchSchema => ({
+const StopMatch = (status?: boolean): MatchSchema => ({
   matching: () => StopMatch(status),
   matchStop: () => StopMatch(status),
-  end: () => {},
+  matchReturn: () => StopMatch(status),
+  end: () => status,
 });
 
-const Match = (status: boolean): MatchSchema => ({
+const MatchReturn = (data):any => ({
+  matching: () => MatchReturn(data),
+  matchStop: () => MatchReturn(data),
+  matchReturn: () => MatchReturn(data),
+  end: () => data,
+});
+
+const Match = (status?: boolean): MatchSchema => ({
   matching: ({ pred, f }: MatchObject) => {
     if (pred) f();
     return Match(false);
@@ -17,7 +25,11 @@ const Match = (status: boolean): MatchSchema => ({
     const newStatus = pred ? true : false;
     return Match(newStatus);
   },
-  end: () => {},
+  matchReturn: ({ pred, f, }: MatchObject) => {
+    if (pred) return MatchReturn(f());
+    return Match(false);
+  },
+  end: () => status,
 });
 
 export default Match

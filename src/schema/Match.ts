@@ -6,5 +6,6 @@ export interface MatchObject {
 export interface MatchSchema {
   matching: (x: MatchObject) => MatchSchema;
   matchStop: (x: MatchObject) => MatchSchema;
+  matchReturn:(x: MatchObject) => any;
   end: () => void;
 }
