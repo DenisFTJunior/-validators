@@ -8,11 +8,11 @@ export interface ValidateObject {
 }
 
 export interface ValidateSchema {
-  get: () => void;
+  get: () => fOut[];
   set: (x: ValidateObject) => ValidateSchema;
 }
 
 export interface ValidateInput {
-  x?: boolean;
+  x?: fOut[];
   config?: Config;
 }
