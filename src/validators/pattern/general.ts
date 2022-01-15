@@ -7,7 +7,7 @@ const patternMatch = (pattern) => (value, config):fOut => {
     result,
     msg: result
       ? null
-      : config?.personalizedMessage.patternMatch || "Pattern not match",
+      : config?.personalizedMessage?.patternMatch || "Pattern not match",
   };
 };
 

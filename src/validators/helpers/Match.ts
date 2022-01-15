@@ -9,7 +9,7 @@ const StopMatch = (status: boolean): MatchSchema => ({
 const Match = (status: boolean): MatchSchema => ({
   matching: ({ pred, f }: MatchObject) => {
     if (pred) f();
-    return Match(true);
+    return Match(false);
   },
   matchStop: ({ pred, f }: MatchObject) => {
     if (status) return StopMatch(status);

@@ -10,7 +10,7 @@ const isEmailValid = (value, config): fOut => {
     result,
     msg: result
       ? null
-      : config?.personalizedMessage.isEmailValid || "Invalid email",
+      : config?.personalizedMessage?.isEmailValid || "Invalid email",
   };
 };
 
