@@ -1,4 +1,4 @@
-import { Config } from "./Config";
+import { Config } from "./config/Config";
 import { fOut } from "./f";
 
 export interface ValidateFormObject {

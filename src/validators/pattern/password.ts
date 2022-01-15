@@ -1,14 +1,17 @@
 import { fOut } from "../../schema/f";
 import Match from "../helpers/Match";
 
-const isPasswordValid = (value, config): fOut => {
-  const UPPERCASE_PATTERN = /^(?=.*[A-Z])$/;
-  const LETTER_PATTERN = /^(?=.*[a-z])$/;
-  const SPECIALCHAR_PATTERN = /^(?=.*[$*&@#])$/;
-  const NUMBER_PATTERN = /^(?=.*\d)$/;
-  const MIN_CHAR_PATTERN = `/^[0-9a-zA-Z$*&@#]{${
-    config?.isValidPassword?.minChar || 8
-  },}$/`;
+const isPasswordValid = (
+  value,
+  { isValidPassword, personalizedMessage }
+): fOut => {
+  const UPPERCASE_PATTERN = /(?=.*[A-Z])/;
+  const LETTER_PATTERN = /(?=.*[a-z])/;
+  const SPECIALCHAR_PATTERN = /(?=.*[$*&@#])/;
+  const NUMBER_PATTERN = /(?=.*\d)/;
+  const MIN_CHAR_PATTERN = `/[0-9a-zA-Z$*&@#]{${
+    isValidPassword?.minChar || 8
+  },}/`;
 
   const regexFactory = (pattern) => new RegExp(pattern);
 
@@ -20,7 +23,7 @@ const isPasswordValid = (value, config): fOut => {
 
   const { result, msg } = Match()
     .matchReturn({
-      pred: config.isValidPassword.desativeUpperCase ? false : hasUppercase,
+      pred: isValidPassword.desativeUpperCase ? false : hasUppercase,
       f: () => ({
         msg: "At least one uppercase letter is required ",
         result: true,
@@ -30,29 +33,27 @@ const isPasswordValid = (value, config): fOut => {
       pred: hasMinChar,
       f: () => ({
         msg: `At least  ${
-          config?.isValidPassword?.minChar || "8"
+          isValidPassword?.minChar || "8"
         } charecters are required `,
         result: true,
       }),
     })
     .matchReturn({
-      pred: config.isValidPassword.desativeNumber ? false : hasNumber,
+      pred: isValidPassword.desativeNumber ? false : hasNumber,
       f: () => ({
         msg: "At least one Number is required ",
         result: true,
       }),
     })
     .matchReturn({
-      pred: config.isValidPassword.desativeSpecialSymbol
-        ? false
-        : hasSpecialChar,
+      pred: isValidPassword.desativeSpecialSymbol ? false : hasSpecialChar,
       f: () => ({
         msg: "At least one special char is required ",
         result: true,
       }),
     })
     .matchReturn({
-      pred: config.isValidPassword.desativeLetter ? false : hasLetter,
+      pred: isValidPassword.desativeLetter ? false : hasLetter,
       f: () => ({
         msg: "At least one smallcase letter is required ",
         result: true,
@@ -62,7 +63,7 @@ const isPasswordValid = (value, config): fOut => {
 
   return {
     result,
-    msg: result ? null : msg,
+    msg: result ? null : personalizedMessage?.isPasswordValid || msg,
   };
 };
 
