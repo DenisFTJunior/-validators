@@ -3,14 +3,14 @@ import { fOut } from "../../schema/f.js";
 
 const patternMatch =
   (pattern: any) =>
-  (value: any, { personalizedMessage }: Config): fOut => {
+  (value: any, config?: Config): fOut => {
     const regex = RegExp(pattern);
     const result = regex.test(value);
     return {
-      result,
+      result: !result || false,
       msg: result
         ? undefined
-        : personalizedMessage?.patternMatch || "Pattern not match",
+        : config?.personalizedMessage?.patternMatch || "Pattern not match",
     };
   };
 

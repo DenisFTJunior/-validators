@@ -3,9 +3,14 @@ export interface MatchObject {
   f: Function;
 }
 
+export interface MatchReturnObject {
+  pred: boolean;
+  data: {};
+}
+
 export interface MatchSchema {
   matching: (x: MatchObject) => MatchSchema;
   matchStop: (x: MatchObject) => MatchSchema;
-  matchReturn:(x: MatchObject) => any;
+  matchReturn:(x: MatchReturnObject) => any;
   end: () => void;
 }

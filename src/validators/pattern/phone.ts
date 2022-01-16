@@ -2,12 +2,10 @@ import { Config } from "../../schema/config/Config.js";
 import { fOut } from "../../schema/f.js";
 import Match from "../helpers/Match.js";
 
-const isPhoneValid = (
-  value: any,
-  { isPhoneValid, personalizedMessage }: Config
-): fOut => {
-  const COUNTRYCODE_PATTERN = /^+(?=*\d){2,4}/;
-  const PHONE_PATERN = /(?=*\d){9,15}/;
+const isPhoneValid = (value: any, config?: Config): fOut => {
+  const COUNTRYCODE_PATTERN = /^\(?\+[0-9]{1,3}\)?/;
+  const PHONE_PATERN =
+    /\(?\+[0-9]{1,3}\)? ?-?[0-9]{1,3} ?-?[0-9]{3,5} ?-?[0-9]{4}( ?-?[0-9]{3})?/;
 
   const regexFactory = (pattern: any) => new RegExp(pattern);
 
@@ -16,24 +14,25 @@ const isPhoneValid = (
 
   const { result, msg } = Match()
     .matchReturn({
-      pred: isPhoneValid?.desativeCountryCode ? false : hasCountryCode,
-      f: () => ({
+      pred: config?.isPhoneValid?.desativeCountryCode ? false : !hasCountryCode,
+      data: {
         msg: "Country code is required ",
         result: true,
-      }),
+      },
     })
     .matchReturn({
-      pred: isValid,
-      f: () => ({
+      pred: !isValid,
+      data: {
         msg: "Invalid phone",
         result: true,
-      }),
+      },
     })
     .end();
+  console.log("hasCountryCode", hasCountryCode);
 
   return {
-    result,
-    msg: result ? null : personalizedMessage?.isPhoneValid || msg,
+    result: result || false,
+    msg: !result ? undefined : config?.personalizedMessage?.isPhoneValid || msg,
   };
 };
 

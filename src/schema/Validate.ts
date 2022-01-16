@@ -2,9 +2,9 @@ import { Config } from "./config/Config.js";
 import { fOut } from "./f.js";
 
 export interface ValidateObject {
-  refs: HTMLElement;
+  refs?: HTMLElement;
   value: any;
-  f: (value: any, config?: Object) => fOut;
+  f: (value: any, config?: Config) => fOut;
 }
 
 export interface ValidateSchema {
