@@ -1,10 +1,11 @@
-import { fOut } from "../../schema/f";
+import { Config } from "../../schema/config/Config.js";
+import { fOut } from "../../schema/f.js";
 
-const isArray = (x: any, config): fOut => {
+const isArray = (x: any, { personalizedMessage }: Config): fOut => {
   const result = Array.isArray(x);
   return {
     result,
-    msg: result ? null :config?.personalizedMessage?.isArray || "Not array",
+    msg: result ? undefined : personalizedMessage?.isArray || "Not array",
   };
 };
 

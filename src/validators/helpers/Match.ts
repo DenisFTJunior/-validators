@@ -1,4 +1,4 @@
-import { MatchObject, MatchSchema } from "../../schema/Match";
+import { MatchObject, MatchSchema } from "../../schema/Match.js";
 
 const StopMatch = (status?: boolean): MatchSchema => ({
   matching: () => StopMatch(status),
@@ -7,7 +7,7 @@ const StopMatch = (status?: boolean): MatchSchema => ({
   end: () => status,
 });
 
-const MatchReturn = (data):any => ({
+const MatchReturn = (data: any): MatchSchema => ({
   matching: () => MatchReturn(data),
   matchStop: () => MatchReturn(data),
   matchReturn: () => MatchReturn(data),
@@ -25,11 +25,11 @@ const Match = (status?: boolean): MatchSchema => ({
     const newStatus = pred ? true : false;
     return Match(newStatus);
   },
-  matchReturn: ({ pred, f, }: MatchObject) => {
+  matchReturn: ({ pred, f }: MatchObject) => {
     if (pred) return MatchReturn(f());
     return Match(false);
   },
   end: () => status,
 });
 
-export default Match
+export default Match;

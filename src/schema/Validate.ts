@@ -1,5 +1,5 @@
-import { Config } from "./Config";
-import { fOut } from "./f";
+import { Config } from "./config/Config.js";
+import { fOut } from "./f.js";
 
 export interface ValidateObject {
   refs: HTMLElement;
@@ -8,11 +8,11 @@ export interface ValidateObject {
 }
 
 export interface ValidateSchema {
-  get: () => fOut[];
+  get: () => fOut[] | [];
   set: (x: ValidateObject) => ValidateSchema;
 }
 
 export interface ValidateInput {
-  x?: fOut[];
+  x?: fOut[] | [];
   config?: Config;
 }

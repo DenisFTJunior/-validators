@@ -1,10 +1,11 @@
-import { fOut } from "../../schema/f";
+import { Config } from "../../schema/config/Config.js";
+import { fOut } from "../../schema/f.js";
 
-const isNumber = (x: any, config): fOut => {
+const isNumber = (x: any, { personalizedMessage }: Config): fOut => {
     const result = typeof x === "number";
     return {
       result,
-      msg: result ? null : config?.personalizedMessage?.isNumber || "Not number",
+      msg: result ? undefined : personalizedMessage?.isNumber || "Not number",
     };
   };
 

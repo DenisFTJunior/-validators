@@ -7,6 +7,6 @@ export interface PersonalizedMessage {
   isString: string;
   isEmailValid: string;
   isPhoneValid: string;
-  IsPasswordValid: string;
+  isPasswordValid: string;
   patternMatch: string;
 }
