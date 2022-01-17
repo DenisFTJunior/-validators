@@ -2,7 +2,7 @@
   "name": "fast-validators",
   "version": "1.1.2",
   "description": "Validation lib with fast validators done to usage",
-  "main": "src/bundle.js",
+  "main": "./bundle.js",
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.16.7",
     "@babel/plugin-transform-shorthand-properties": "^7.16.7",
