@@ -5,7 +5,9 @@ export const ErrorMsg = (
   { warning }: Config,
   msg: string | undefined
 ) => {
+  if(document.querySelector("#error-fast-validators-handler")) return {}
   const span = document.createElement("span");
+  span.id = "error-fast-validators-handler"
   refs.style.borderColor =  warning?.color || "#ff726f" 
   span.innerText = msg ? msg : "";
   generateStyle(span, warning || {});
