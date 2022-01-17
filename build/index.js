@@ -1,6 +1,19 @@
 "use strict";
 exports.__esModule = true;
-exports.isPasswordValid = exports.isPhoneValid = exports.patternMatch = exports.isEmailValid = exports.isObject = exports.isFunction = exports.isBoolean = exports.isString = exports.isNumber = exports.isArray = exports.Match = exports.ValidateForm = exports.Validate = void 0;
+exports.isPasswordValid =
+  exports.isPhoneValid =
+  exports.patternMatch =
+  exports.isEmailValid =
+  exports.isObject =
+  exports.isFunction =
+  exports.isBoolean =
+  exports.isString =
+  exports.isNumber =
+  exports.isArray =
+  exports.Match =
+  exports.ValidateForm =
+  exports.Validate =
+    void 0;
 var Validate_1 = require("./validators/helpers/Validate");
 var ValidateForm_1 = require("./validators/helpers/ValidateForm");
 var Match_1 = require("./validators/helpers/Match");
@@ -14,6 +27,7 @@ var email_1 = require("./validators/pattern/email");
 var phone_1 = require("./validators/pattern/phone");
 var general_1 = require("./validators/pattern/general");
 var password_1 = require("./validators/pattern/password");
+
 exports.Validate = Validate_1["default"];
 exports.ValidateForm = ValidateForm_1["default"];
 exports.Match = Match_1["default"];
