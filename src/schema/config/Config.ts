@@ -2,6 +2,7 @@ import { IsEmailValid } from "./isValid/email.js";
 import { IsPasswordValid } from "./isValid/password.js";
 import { isPhoneValid } from "./isValid/phone.js";
 import { PersonalizedMessage } from "./personalizedMessage.js";
+import { Style } from "./style.js";
 import { Warning } from "./warning.js";
 
 export interface Config {
@@ -10,4 +11,5 @@ export interface Config {
   isPasswordValid?: IsPasswordValid;
   isPhoneValid?: isPhoneValid;
   isEmailValid?: IsEmailValid;
+  style?: Style;
 }

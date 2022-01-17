@@ -6,7 +6,8 @@ export const ErrorMsg = (
   msg: string | undefined
 ) => {
   const span = document.createElement("span");
-  span.innerHTML = msg ? msg : "";
+  refs.style.borderColor =  warning?.color || "#ff726f" 
+  span.innerText = msg ? msg : "";
   generateStyle(span, warning || {});
   refs.appendChild(span);
 };
