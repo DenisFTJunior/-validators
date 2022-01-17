@@ -14,7 +14,7 @@ const ValidateForm = ({
   set: ({ f, value, refs }: ValidateFormObject) => {
     const { result, msg } = f(value, config);
     if (!result) ErrorMsg(refs, config ? config : {}, msg);
-    clean(refs, config)
+    if (result) clean(refs, config);
     return ValidateForm({ x: x || result });
   },
 });

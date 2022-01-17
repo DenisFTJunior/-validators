@@ -16,7 +16,7 @@ var ValidateForm = function (_a) {
         result = _b.result,
         msg = _b.msg;
       if (!result) (0, ErrorMsg_1.ErrorMsg)(refs, config ? config : {}, msg);
-      clean(refs, config);
+      if (result) clean(refs, config);
       return ValidateForm({ x: x || result });
     },
   };
