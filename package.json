@@ -1,5 +1,5 @@
 {
-  "name": "-validators",
+  "name": "fast-validators",
   "version": "1.0.0",
   "description": "Validation lib with fast validators done to usage",
   "main": "src/index.ts",
