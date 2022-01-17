@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-var ErrorMsg_1 = require("../../../src/components/ErrorMsg");
+var ErrorMsg_1 = require("../../../build/components/ErrorMsg");
 var ValidateForm = function (_a) {
   var x = _a.x,
     config = _a.config;
