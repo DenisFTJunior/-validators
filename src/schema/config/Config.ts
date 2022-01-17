@@ -1,9 +1,9 @@
-import { IsEmailValid } from "./isValid/email.js";
-import { IsPasswordValid } from "./isValid/password.js";
-import { isPhoneValid } from "./isValid/phone.js";
-import { PersonalizedMessage } from "./personalizedMessage.js";
-import { Style } from "./style.js";
-import { Warning } from "./warning.js";
+import { IsEmailValid } from "./isValid/email";
+import{IsPasswordValid } from "./isValid/password";
+import { isPhoneValid } from "./isValid/phone";
+import { PersonalizedMessage } from "./personalizedMessage";
+import { Style } from "./style";
+import { Warning } from "./warning";
 
 export interface Config {
   warning?: Warning;

@@ -1,5 +1,5 @@
-import { Config } from "./config/Config.js";
-import { fOut } from "./f.js";
+import { Config } from "./config/Config";
+import { fOut } from "./f";
 
 export interface ValidateObject {
   refs?: HTMLElement;

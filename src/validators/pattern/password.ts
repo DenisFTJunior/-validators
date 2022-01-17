@@ -1,6 +1,6 @@
-import { Config } from "../../schema/config/Config.js";
-import { fOut } from "../../schema/f.js";
-import Match from "../helpers/Match.js";
+import { Config } from "../../schema/config/Config";
+import { fOut } from "../../schema/f";
+import Match from "../helpers/Match";
 
 const isPasswordValid = (value: any, config?: Config): fOut => {
   const UPPERCASE_PATTERN = /(?=.*[A-Z])/;

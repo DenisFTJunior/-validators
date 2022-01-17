@@ -1,5 +1,5 @@
-import { Config } from "../../schema/config/Config.js";
-import { fOut } from "../../schema/f.js";
+import { Config } from "../../schema/config/Config";
+import { fOut } from "../../schema/f";
 
 const isObject = (x: any, { personalizedMessage }: Config): fOut => {
     const result = typeof x === "object";

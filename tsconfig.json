@@ -23,6 +23,8 @@
       "noEmit": true,
     },
     "include": 
-      ["src/**/*"]
-    
+      ["src/**/*"],
+    "paths": {
+      "*.ts": ["*"]
+    }
   }

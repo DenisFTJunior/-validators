@@ -2,7 +2,7 @@ import {
   ValidateInput,
   ValidateObject,
   ValidateSchema,
-} from "../../schema/Validate.js";
+} from "../../schema/Validate";
 
 const Validate = ({ x = [], config }: ValidateInput): ValidateSchema => ({
   get: () => x,

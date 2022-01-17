@@ -1,6 +1,6 @@
-import { Config } from "../../schema/config/Config.js";
-import { fOut } from "../../schema/f.js";
-import Match from "../helpers/Match.js";
+import { Config } from "../../schema/config/Config";
+import { fOut } from "../../schema/f";
+import Match from "../helpers/Match";
 
 const isPhoneValid = (value: any, config?: Config): fOut => {
   const COUNTRYCODE_PATTERN = /^\(?\+[0-9]{1,3}\)?/;

@@ -1,4 +1,4 @@
-import { MatchObject, MatchReturnObject, MatchSchema } from "../../schema/Match.js";
+import { MatchObject, MatchReturnObject, MatchSchema } from "../../schema/Match";
 
 const StopMatch = (status?: boolean): MatchSchema => ({
   matching: () => StopMatch(status),

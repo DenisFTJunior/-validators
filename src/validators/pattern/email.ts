@@ -1,5 +1,5 @@
-import { Config } from "../../schema/config/Config.js";
-import { fOut } from "../../schema/f.js";
+import { Config } from "../../schema/config/Config";
+import { fOut } from "../../schema/f";
 
 const isEmailValid = (value: any, config?: Config): fOut => {
   const PATTERN =

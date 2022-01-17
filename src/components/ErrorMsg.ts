@@ -1,4 +1,4 @@
-import { Config } from "../schema/config/Config.js";
+import { Config } from "../schema/config/Config";
 
 export const ErrorMsg = (
   refs: HTMLElement,

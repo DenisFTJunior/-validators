@@ -2,8 +2,8 @@ import {
   ValidateFormInput,
   ValidateFormObject,
   ValidateFormSchema,
-} from "../../schema/ValidateForm.js";
-import { ErrorMsg } from "../../components/ErrorMsg.js";
+} from "../../schema/ValidateForm";
+import { ErrorMsg } from "../../components/ErrorMsg";
 
 const ValidateForm = ({
   x,
