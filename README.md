@@ -15,7 +15,7 @@ Any contribution or issues is welcome!
                     .get()
 ```
 
-**set**
+### set
 
 This set the validator which will be use
  > ref - like a id for identify where your proccess is broken
@@ -25,12 +25,12 @@ This set the validator which will be use
  > f - any validator you want, we provide some. If you want create your own, see **Personalized Validators**
  
   
-**get**
+### get
 
   Give you the result of validation
   Warning-> if you dont put that the validation never be ended
   
-**result**
+### result
 
   Validate return an array of objects like:
   ```
@@ -53,7 +53,7 @@ It can add an message of error below input
                     .get()
 ```
 
-**set**
+ ### set
 
 This set the validator which will be use
  > refs - must be a element
@@ -63,12 +63,12 @@ This set the validator which will be use
  > f - any validator you want, we provide some. If you want create your own, see **Personalized Validators**
  
   
-**get**
+### get
 
   Give you the result of validation
   Warning-> if you dont put that the validation never be ended
   
-**result**
+### result
 
   ValidateForm return a boolean which say if has any error(true) or not(false) :
 
