@@ -69,6 +69,7 @@ This set the validator which will be use
   Warning-> if you dont put that the validation never be ended
   
 **result**
+
   ValidateForm return a boolean which say if has any error(true) or not(false) :
 
 ### Match
