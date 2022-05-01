@@ -20,7 +20,7 @@ const ValidateForm = ({
 });
 
 const clean = (refs: HTMLElement, config?: Config) => {
-  const child = document.querySelector("#error-fast-validators-handler");
+  const child = document.querySelector(".error-fast-validators-handler");
   if (child) refs.removeChild(child);
   if (
     refs?.style?.borderColor &&
